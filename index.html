@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
+
+<title>Social Connect | Pranova</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --white: #ffffff;
+  --muted: #999999;
+  --border: rgba(255,255,255,.10);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  font-family: 'Inter', sans-serif;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #303030 0%,
+      #111111 35%,
+      #050505 70%,
+      #000000 100%
+    );
+  background-attachment: fixed;
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 18px;
+}
+
+/* MAIN CONTAINER */
+
+.container {
+  width: 100%;
+  max-width: 430px;
+  text-align: center;
+}
+
+/* BRAND */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 42px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg,#ffffff,#bcbcbc);
+  color: #000;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+/* HEADER */
+
+.heading {
+  margin-bottom: 32px;
+}
+
+.heading h1 {
+  font-size: clamp(30px,8vw,38px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+
+.heading p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* SOCIAL LIST */
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 80px;
+  padding: 15px 17px;
+
+  border: 1px solid var(--border);
+  border-radius: 17px;
+
+  background: rgba(255,255,255,.045);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: white;
+  text-decoration: none;
+  text-align: left;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.09);
+  border-color: rgba(255,255,255,.24);
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
+
+.social-card:active {
+  transform: scale(.98);
+}
+
+.social-icon {
+  width: 47px;
+  height: 47px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+}
+
+.social-icon svg {
+  display: block;
+  width: 27px;
+  height: 27px;
+}
+
+/* BRAND ICON BACKGROUNDS */
+
+.facebook-icon {
+  background: #1877F2;
+}
+
+.instagram-icon {
+  background: linear-gradient(
+    135deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+
+.youtube-icon {
+  background: #FF0033;
+}
+
+.google-icon {
+  background: #ffffff;
+}
+
+/* CARD TEXT */
+
+.social-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.social-info h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.social-info p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.arrow {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #999999;
+  font-size: 20px;
+  transition: .25s;
+}
+
+.social-card:hover .arrow {
+  color: white;
+  transform: translate(2px,-2px);
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 38px;
+}
+
+.footer-line {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 11px;
+  color: #777777;
+  letter-spacing: 1.5px;
+}
+
+.footer strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* FOCUS */
+
+.social-card:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 480px) {
+  body {
+    align-items: flex-start;
+    padding: 65px 19px 35px;
+  }
+
+  .brand {
+    margin-bottom: 36px;
+  }
+
+  .heading h1 {
+    font-size: 32px;
+  }
+
+  .social-card {
+    min-height: 76px;
+    padding: 13px 14px;
+    border-radius: 15px;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+
+  <!-- BRAND -->
+  <div class="brand">
+    <div class="brand-mark">P</div>
+    <span class="brand-name">PRANOVA</span>
+  </div>
+
+  <!-- HEADER -->
+  <header class="heading">
+    <h1>Let's Connect.</h1>
+    <p>
+      We'd love to stay connected with you.<br>
+      Choose your favourite platform below.
+    </p>
+  </header>
+
+  <!-- SOCIAL LINKS -->
+  <section class="social-list">
+
+    <!-- FACEBOOK -->
+    <a class="social-card"
+       href="https://facebook.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <div class="social-icon facebook-icon">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v1.8H7V13h2.8v8z"/>
+        </svg>
+      </div>
+
+      <div class="social-info">
+        <h3>Facebook</h3>
+        <p>Follow us on Facebook</p>
+      </div>
+
+      <span class="arrow">↗</span>
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a class="social-card"
+       href="https://instagram.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <div class="social-icon instagram-icon">
+        <svg viewBox="0 0 24 24"
+             fill="none"
+             stroke="white"
+             stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1"
+                  fill="white" stroke="none"/>
+        </svg>
+      </div>
+
+      <div class="social-info">
+        <h3>Instagram</h3>
+        <p>Follow our Instagram page</p>
+      </div>
+
+      <span class="arrow">↗</span>
+    </a>
+
+    <!-- YOUTUBE -->
+    <a class="social-card"
+       href="https://youtube.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <div class="social-icon youtube-icon">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6z"/>
+        </svg>
+      </div>
+
+      <div class="social-info">
+        <h3>YouTube</h3>
+        <p>Subscribe to our channel</p>
+      </div>
+
+      <span class="arrow">↗</span>
+    </a>
+
+    <!-- GOOGLE REVIEW -->
+    <a class="social-card"
+       href="https://google.com/"
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <div class="social-icon google-icon">
+        <svg viewBox="0 0 48 48">
+          <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.9 6.1-15Z"/>
+          <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.9l-6.6-5.1c-1.8 1.2-4 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44Z"/>
+          <path fill="#FBBC05" d="M12.6 27.5a12 12 0 0 1 0-7v-5.3H5.8a20 20 0 0 0 0 17.6Z"/>
+          <path fill="#EA4335" d="M24 12.1c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 6 29.5 4 24 4A20 20 0 0 0 5.8 15.2l6.8 5.3c1.6-4.8 6.1-8.4 11.4-8.4Z"/>
+        </svg>
+      </div>
+
+      <div class="social-info">
+        <h3>Google Review</h3>
+        <p>Share your experience with us</p>
+      </div>
+
+      <span class="arrow">↗</span>
+    </a>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <p>POWERED BY <strong>PRANOVA</strong></p>
+  </footer>
+
+</main>
+
+</body>
+</html>
